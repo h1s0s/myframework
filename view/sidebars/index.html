@@ -1,21 +1,17 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head><script src="../../bootstrap-5.3.1-examples/assets/js/color-modes.js"></script>
-
+  <head>
+    <script src="../../bootstrap-5.3.1-examples/assets/js/color-modes.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.115.4">
     <title>Sidebars · Bootstrap v5.3</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-
     <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link href="../../bootstrap-5.3.1-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="../../bootstrap-5.3.1-examples/assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -88,8 +84,18 @@
       .bd-mode-toggle {
         z-index: 1500;
       }
-    </style>
 
+      #collapse-bar {
+        margin-left: 72px;
+        position: fixed;
+        top: 0; /* 상단 간격 조절 */
+        bottom: 0; /* 하단 간격 조절 */
+        left: 0;
+        z-index: 1000; /* 다른 요소 위로 떠 있도록 설정 */
+        background-color: #fff; /* 배경색 설정 */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 설정 (선택 사항) */
+      }
+    </style>
     <link href="sidebars.css" rel="stylesheet">
   </head>
   <body>
@@ -108,43 +114,6 @@
         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
       </symbol>
     </svg>
-
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-
-    
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -170,109 +139,73 @@
 </svg>
 
 <main class="d-flex flex-nowrap">
-  <h1 class="visually-hidden">Sidebars examples</h1>
+
+<!--  <h1 class="visually-hidden">Sidebars examples</h1>-->
 
   <div class="d-flex flex-column flex-shrink-0 bg-body-tertiary" style="width: 4.5rem;">
+    <!--로고 영역-->
     <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" title="Icon-only" data-bs-toggle="tooltip" data-bs-placement="right">
       <svg class="bi pe-none" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
       <span class="visually-hidden">Icon-only</span>
     </a>
+    <!--//로고 영역-->
+    <!--사이드 네비게이션 바 영역-->
     <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
       <li class="nav-item">
-        <a href="javascript:void(0);" class="nav-link py-3 border-bottom rounded-0" aria-current="page" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a onclick="javascript:setCollapse(this); false;" class="nav-link py-3 border-bottom rounded-0" aria-current="page" data-title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Home"><use xlink:href="#home"/></svg>
         </a>
       </li>
       <li class="nav-item">
-        <a href="javascript:void(0);" class="nav-link py-3 border-bottom rounded-0" title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a onclick="javascript:setCollapse(this); false;" class="nav-link py-3 border-bottom rounded-0" data-title="Dashboard" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Dashboard"><use xlink:href="#speedometer2"/></svg>
         </a>
       </li>
       <li class="nav-item">
-        <a href="javascript:void(0);" class="nav-link py-3 border-bottom rounded-0" title="Orders" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a onclick="javascript:setCollapse(this); false;" class="nav-link py-3 border-bottom rounded-0" data-title="Orders" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Orders"><use xlink:href="#table"/></svg>
         </a>
       </li>
       <li class="nav-item">
-        <a href="javascript:void(0);" class="nav-link py-3 border-bottom rounded-0" title="Products" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a onclick="javascript:setCollapse(this); false;" class="nav-link py-3 border-bottom rounded-0" data-title="Products" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Products"><use xlink:href="#grid"/></svg>
         </a>
       </li>
       <li class="nav-item">
-        <a href="javascript:void(0);" class="nav-link py-3 border-bottom rounded-0" title="Customers" data-bs-toggle="tooltip" data-bs-placement="right">
+        <a onclick="javascript:setCollapse(this); false;" class="nav-link py-3 border-bottom rounded-0" data-title="Customers" data-bs-toggle="tooltip" data-bs-placement="right">
           <svg class="bi pe-none" width="24" height="24" role="img" aria-label="Customers"><use xlink:href="#people-circle"/></svg>
         </a>
       </li>
     </ul>
     <div class="dropdown border-top">
       <a href="#" class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle">
+        <img src="https://github.com/mdo.png" alt="mdo" width="24" height="24" class="rounded-circle"><!--프로필 사진 넣기-->
+
       </a>
       <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item" href="#">New project...</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" href="#">로그아웃</a></li>
       </ul>
     </div>
   </div>
+  <!--//사이드 네비게이션 바 영역-->
 
+  <!-- collapse 영역 -->
   <div id="collapse-bar" class="flex-shrink-0 p-3" style="width: 280px; display:none;">
+    <!-- collapse 로고 영역 -->
     <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
       <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">Collapsible</span>
+      <span id="collapseName" class="fs-5 fw-semibold"></span>
     </a>
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
+          중카테1
         </button>
         <div class="collapse hide" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Updates</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Reports</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Weekly</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Monthly</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Annually</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Processed</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shipped</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">New...</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Profile</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Settings</a></li>
-            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Sign out</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">소카테1</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">소카테2</a></li>
+            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">소카테3</a></li>
           </ul>
         </div>
       </li>
@@ -281,7 +214,9 @@
 
 <!--  <button onclick="$('#collapse-bar').show()">ㅇㅇㅇ</button>-->
   <div class="b-example-divider b-example-vr" style="width: 0.01rem;"></div>
-  <iframe src="/view/main.html" width="100%" height="100%" frameborder="0"></iframe>
+
+  <!-- 페이지 영역 -->
+  <iframe src="/view/page/basic.html" width="100%" height="100%" frameborder="0"></iframe>
 </main>
 </body>
 </html>
@@ -289,17 +224,21 @@
 <script src="../../bootstrap-5.3.1-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
 <script src="sidebars.js"></script>
 <script>
-  $(document).ready(function() {
-    //nav 버튼 클릭 이벤트
-    $(".nav-item a").click(function() {
-      if($(this).hasClass("active")){
-        $(this).removeClass("active");
-        $("#collapse-bar").hide();
-        return;
-      }
-        $(".nav-item a").removeClass("active");
-        $(this).addClass("active");
-        $("#collapse-bar").show();
-    });
-  });
+
+  function setCollapse(element = $(element)) {
+    var isActive = $(element).hasClass("active");
+    $(".nav-item a").removeClass("active");
+    $("#collapse-bar").toggle(!isActive);
+
+    if (isActive) {
+      return;
+    }
+
+    $(element).toggleClass("active", !isActive);
+    var title = $(element).data('title');
+    $("#collapseName").text(title);
+
+    // 메뉴 중 중카테, 소카테 가져오는 로직 추가
+  }
+
 </script>
