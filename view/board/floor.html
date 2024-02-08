@@ -1,9 +1,9 @@
 
-<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
-<%@ taglib prefix="html"  uri="/WEB-INF/tlds/mighty.tld" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!--<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>-->
+<!--<%@ taglib prefix="html"  uri="/WEB-INF/tlds/mighty.tld" %>-->
+<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>-->
 <script type="text/javascript" src="<c:url value='/resources/Mighty/template/js/XG_GRID1_template.js'/>"></script>
-<%--<script src="/resources/Mighty/3rd/AnyChart/js/anychart.min.js"></script>--%>
+<!--<%&#45;&#45;<script src="/resources/Mighty/3rd/AnyChart/js/anychart.min.js"></script>&#45;&#45;%>-->
 <link href="/resources/Mighty/3rd/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 <link href="/resources/zeons/3rd/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -73,12 +73,9 @@
     </div>
 
     <div class="data-area-body">
-        <!-- 조회조건 -->
         <div class="search-area">
-            <!-- 상단조회조건 -->
             <div class="search-wrap">
                 <div class="zform-horizontal">
-                    <!-- edit_change 함수를 태우기 위해서는 클래스명에 option_input_bg 클래스를 추가하여야 한다.-->
                     <div class="form-group option_input_bg">
                         <label>사업지</label>
                         <select id='S_PROJ_CODE' class="zform-control" style="width:180px;">
@@ -98,7 +95,7 @@
 
                     <div class="form-group option_input_bg">
                         <label>기준일자</label>
-                        <html:basicdate id="dateimages" classType="search" dateType="date" moveBtn="true" readOnly="false"></html:basicdate>
+<!--                        <html:basicdate id="dateimages" classType="search" dateType="date" moveBtn="true" readOnly="false"></html:basicdate>-->
                     </div>
                 </div>
             </div>
@@ -139,9 +136,9 @@
                             <div id='grid_1' class='grid_div ml5 mr5' style="height: 100%; display:none;">
                                 <div id="dg_1" style='width:100%;height:100%; margin-top: 2px;' class='slick-grid'></div>
                             </div>
-                            <%--							<div id='grid_2' class='grid_div ml5 mr5' style="height: 99%;">--%>
-                            <%--								<div id="container" class='' style="width: 100%; height: 100%; margin: 0 auto; padding: 20px 0px 0px;"></div>--%>
-                            <%--							</div>							                         --%>
+<!--                            <%&#45;&#45;							<div id='grid_2' class='grid_div ml5 mr5' style="height: 99%;">&#45;&#45;%>-->
+<!--                            <%&#45;&#45;								<div id="container" class='' style="width: 100%; height: 100%; margin: 0 auto; padding: 20px 0px 0px;"></div>&#45;&#45;%>-->
+<!--                            <%&#45;&#45;							</div>							                         &#45;&#45;%>-->
                             <div id="table-wrapper" style="float:left;">
                                 <table id="heat-table"></table>
                             </div>
