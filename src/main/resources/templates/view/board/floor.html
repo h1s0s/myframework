@@ -1,0 +1,373 @@
+
+<!--<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>-->
+<!--<%@ taglib prefix="html"  uri="/WEB-INF/tlds/mighty.tld" %>-->
+<!--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>-->
+<script type="text/javascript" src="<c:url value='/resources/Mighty/template/js/XG_GRID1_template.js'/>"></script>
+<!--<%&#45;&#45;<script src="/resources/Mighty/3rd/AnyChart/js/anychart.min.js"></script>&#45;&#45;%>-->
+<link href="/resources/Mighty/3rd/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+<link href="/resources/zeons/3rd/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="/resources/zeons/3rd/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+<style>
+    .paging_area {position:relative;margin:10px 0 0 0;text-align:center;}
+    .paging_area .paging {}
+    .paging_area .paging a.num {display:inline-block;width:30px;height:24px;margin-left:-2px;padding-top:6px;color:#4c4c4c;background:url("/resources/Theme/images/noti/bg_paging.gif") no-repeat left top;}
+    .paging_area .paging span.on, .paging a.num:hover {display:inline-block;width:30px;height:24px;margin-left:-2px;padding-top:6px;color:#fff;background:url("/resources/Theme/images/noti/bg_paging_on.gif") no-repeat left top;}
+    .paging_area .paging .first {margin-right:8px;}
+    .paging_area .paging .prev {margin-right:8px;margin-left:-7px;}
+    .paging_area .paging .last {margin-left:8px;}
+    .paging_area .paging .next {margin-left:8px;margin-right:-7px;}
+    .paging_area .paging img {margin-left:-2px;vertical-align:middle;}
+    .grid_div_2{float:left; padding:1px 2px 2px 1px;}
+
+    /*@import url('https://fonts.googleapis.com/css?family=Lato:300,400,600,700');*/
+
+    * {
+        font-family: Arial;
+    }
+
+    body {
+        height: 100vh;
+        background: #f9f9f9;
+    }
+
+    #table-wrapper {width: 80%;height: 80%;padding-top: 20px;}
+    #heat-table {border-collapse: collapse;width: 100%;height: 100%;}
+    #heat-table td {
+        background-color: #FFFFFF;    border: 2px solid #FFFFFF;    text-align: center;    vertical-align: middle;
+    }
+    #heat-table td:empty{    content: '\00a0';    visibility: hidden;}
+    #heat-table .A{background-color: #FF6161;}#heat-table .B{background-color: #83C4F3;}#heat-table .C{background-color: #FFDD72;}
+    #heat-table .A:hover, #heat-table .B:hover, #heat-table .C:hover{transform: scale(0.8); background-color: #444}
+    /*.text-container{*/
+    /*    position: relative;*/
+    /*    text-overflow:ellipsis; overflow:hidden; white-space:nowrap;*/
+    /*}*/
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+    .tooltiptext {
+        background-color: #00000090;
+        color: #fff;
+        text-align: left;
+        border-radius: 5px;padding: 5px;position: absolute;z-index: 1;
+        width: 120px;
+        opacity: 1;
+        transition: opacity 0.3s;
+        white-space: nowrap;
+    }
+    .tooltip:hover .tooltiptext {
+        opacity: 1;}
+</style>
+
+<div class="data-area">
+    <div class="data-area-head">
+        <h1><span class="badge"><c:out value = "${sys_name}"/></span> <c:out value = "${pcd_name}"/> <i class="icon-favorite <c:out value = "${bookmark_yn eq 'Y' ? 'on' : ''}"/>"></i></h1>
+        <div class="btn-wrap">
+            <!-- <button class="primary">저장</button> -->
+            <a href="#" class="close" onclick="x_Close(dg_1);"></a>
+        </div>
+    </div>
+
+    <div class="data-area-body">
+        <div class="search-area">
+            <div class="search-wrap">
+                <div class="zform-horizontal">
+                    <div class="form-group option_input_bg">
+                        <label>사업지</label>
+                        <select id='S_PROJ_CODE' class="zform-control" style="width:180px;">
+                        </select>
+                        <button class="icon-square home" onClick='_RED.Projselect(null, null, _RED._sellcodelm);'></button>
+                    </div>
+
+                    <div class="form-group option_input_bg">
+                        <label>형태</label>
+                        <SELECT id='S_STATUS' name='S_STATUS' class="zform-control" style='width: 150px;'></SELECT>
+                    </div>
+
+                    <div class="form-group option_input_bg" style="display: none;">
+                        <label>동</label>
+                        <SELECT id='S_DONG' name='S_DONG' class="zform-control" style='width: 150px;'></SELECT>
+                    </div>
+
+                    <div class="form-group option_input_bg">
+                        <label>기준일자</label>
+<!--                        <html:basicdate id="dateimages" classType="search" dateType="date" moveBtn="true" readOnly="false"></html:basicdate>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- 조회버튼 -->
+            <div class="btn-wrap">
+                <div class="search-more-btn">
+                    <a href="#"></a>
+                </div>
+                <button id="xBtnRetrieve" class="primary" onclick="x_DAO_Retrieve(dg_1);">조회</button>
+            </div>
+        </div>
+
+        <!-- grid_1에대한 추가/삭제 버튼 및 그외 버튼들 -->
+        <!-- 추후 버튼들의 대한 권한을 id로 할것이기 때문에 추가/삭제 버튼이 여러개일 경우 버튼 id 뒤에 dg_1 / dg_2를 반드시 붙여줄것 -->
+        <div class="top-btn-area">
+            <div class="btn-wrap part-left">
+                <button id="xBtnPrint_dg_1"	class="outline"		onclick="x_DAO_Print(dg_1);"><i class="icon icon-print"></i> 양식인쇄</button>
+            </div>
+            <div class="btn-wrap part-right">
+                <div class="option_group fr" style="padding: 2px; border-left: 1px solid #ccc; border-right: 1px solid #ccc;">
+                    <input type="checkbox" id="chk_view_all" checked data-toggle="toggle" data-on="계약메모" data-off="계약메모" data-size="mini" data-width="100" data-onstyle="danger">
+                </div>
+            </div>
+        </div>
+
+        <div class="divide-wrap">
+            <div class="form-divide_793 left_grid" style="flex: 0 0 calc(100% - 40px - 500px);">
+                <div class="section">
+                    <h2>호실차트</h2>
+                    <div class="section-second">
+                        <div class="table-height height-one" style="width: 10%; float: left;">
+                            <div id='grid_3' class='grid_div ml5 mr5' style="height: 99%;">
+                                <div id="dg_3" style='width:100%;height:100%; margin-top: 2px;' class='slick-grid'></div>
+                            </div>
+                        </div>
+                        <div class="table-height height-one" style="width: 90%">
+                            <div id='grid_1' class='grid_div ml5 mr5' style="height: 100%; display:none;">
+                                <div id="dg_1" style='width:100%;height:100%; margin-top: 2px;' class='slick-grid'></div>
+                            </div>
+<!--                            <%&#45;&#45;							<div id='grid_2' class='grid_div ml5 mr5' style="height: 99%;">&#45;&#45;%>-->
+<!--                            <%&#45;&#45;								<div id="container" class='' style="width: 100%; height: 100%; margin: 0 auto; padding: 20px 0px 0px;"></div>&#45;&#45;%>-->
+<!--                            <%&#45;&#45;							</div>							                         &#45;&#45;%>-->
+                            <div id="table-wrapper" style="float:left;">
+                                <table id="heat-table"></table>
+                            </div>
+                            <div id="heat-table-type" style="padding: 10px 10px; float:left; vertical-align:middle;">
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                        <path fill="#FFDD72" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z"/>
+                                    </svg>
+                                    공실
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                        <path fill="#83C4F3" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z"/>
+                                    </svg>
+                                    예약중
+                                </div>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-square-fill" viewBox="0 0 16 16">
+                                        <path fill="#FF6161" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2z"/>
+                                    </svg>
+                                    예약완료
+                                </div>
+                            </div>
+                            <div class="tooltip" style="display:none">
+                                <div class="tooltiptext"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divide"></div>
+            <div class="form-divide_793 form vertical-scroll-wrap" style="flex: 0 0 500px; width: 500px;">
+                <div id="freeform" class="section" style="height: 38.5%;">
+                    <h2>계약정보</h2>
+                    <div id='freeform' class='detail_box'>
+                        <div class="section-second form-area">
+                            <div class="form-wrap noBorderTop column-4">
+                                <div class="form-row">
+                                    <div class="form-head">동/층/호</div>
+                                    <div class="form-body">
+                                        <input type="text" id='dong' class="zform-control" style="width: 43px;" readonly> -
+                                        <input type="text" id='floor' class="zform-control" style="width: 43px;" readonly> -
+                                        <input type="text" id='ho' class="zform-control" style="width: 45px;" readonly>
+                                    </div>
+                                    <div class="form-head">공실구분</div>
+                                    <div class="form-body"><input type="text" id='room_div' class="zform-control" readonly></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-head">타입</div>
+                                    <div class="form-body"><input type="text" id='type' class="zform-control" readonly></div>
+                                    <div class="form-head"></div>
+                                    <div class="form-body"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-head">계약자명</div>
+                                    <div class="form-body"><input type="text" id='cust_name' class="zform-control" readonly></div>
+                                    <div id="label_biz_status" class="form-head"><span class="text-danger">사업자(주민)</span></div>
+                                    <div class="form-body"><input type="text" id='biz_no' class="zform-control" style="text-align: center;" readonly></div>
+                                </div>
+                                <div class="form-row">
+                                    <div id="label_rep_name" class="form-head">계약구분</div>
+                                    <div class="form-body"><input type="text" id='cont_div' class="zform-control" readonly></div>
+                                    <div id="label_rep_name_nation" class="form-head">계약일자</div>
+                                    <div class="form-body"><input type="text" id='date_std' class="zform-control" style="text-align: center;" readonly></div>
+                                </div>
+                                <div class="form-row">
+                                    <div id="label_rep_name" class="form-head">계약기간</div>
+                                    <div class="form-body">
+                                        <input type="text" id='date_cont_start' class="zform-control" style="text-align: center;" readonly> ~ <input type="text" id='date_cont_end' class="zform-control" style="text-align: center;" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section" style="margin-top:17px;">
+                    <h2>계약이력</h2>
+                    <div class="height-free">
+                        <div id='grid_4' class='form_one_div'>
+                            <div id="dg_4" style='width:100%;height:100%;' class='slick-grid'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        //data 배열 셋팅
+        // var data = [
+        //     //column 호수, row 층, value 명칭, roomid 룸아이디, class 클래스
+        //     { row: 1,  column: 1,  value: "101", name: "A-F1-1", roomid: "1", class: "A" },
+        //     { row: 1,  column: 2,  value: "102", name: "C-F1-2" },
+        //     { row: 1,  column: 3,  value: "103", name: "B-F1-3", class: "B" },
+        //     { row: 2,  column: 4,  value: "204", name: "C-F2-4" },
+        //     { row: 2,  column: 5,  value: "205", name: "C-F2-5" },
+        //     { row: 3,  column: 7,  value: "307", name: "C-F3-7" },
+        //     { row: 3,  column: 8,  value: "308", name: "C-F3-8" },
+        //     { row: 3,  column: 9,  value: "309", name: "C-F3-9" },
+        //     { row: 4, column: 10,  value: "410", name: "C-F4-10" },
+        //     { row: 4, column: 11,  value: "411", name: "C-F4-11" },
+        //     { row: 4, column: 12,  value: '412', name: "C-F4-12" },
+        //     { row: 4, column: 13,  value: '413', name: "C-F4-13" },
+        //     { row: 6, column: 23,  value: '623', name: "C-F6-23" },
+        //     { row: 13, column: 23, value: '1323', name: "C-F13-23" },
+        //     { row: 50, column: 20, value: '5020', name: "C-F50-20" },
+        //     { row: 100, column: 100, value: '5020', name: "C-F50-20" }
+        // ];
+        var data = [
+            { row: 1,  column: 1,  value: "101", name: "A-F1-1", roomid: "1", class: "A" },
+            { row: 1,  column: 2,  value: "102", name: "C-F1-2" },
+            { row: 1,  column: 3,  value: "103", name: "B-F1-3" },
+            { row: 1,  column: 4,  value: "102", name: "C-F2-4" },
+            { row: 1,  column: 5,  value: "105", name: "C-F2-5", class: "A" },
+            { row: 2,  column: 1,  value: "201", name: "C-F3-7", class: "A"  },
+            { row: 3,  column: 1,  value: "301", name: "C-F3-8", class: "B"  },
+            { row: 4,  column: 1,  value: "401", name: "C-F3-9", class: "A" },
+            { row: 5,  column: 1,  value: "501", name: "C-F4-10", class: "A" },
+            { row: 6, column: 1,  value: "601", name: "C-F4-11" },
+            { row: 7, column: 1,  value: '701', name: "C-F4-12" },
+            { row: 8, column: 1,  value: '801', name: "C-F4-13", class: "A" },
+            { row: 9, column: 1,  value: '901', name: "C-F6-23", class: "A" },
+        ];
+
+        function createTable(data) {
+            var table = $("#heat-table");
+
+            table.html("");
+
+            var maxColumn = Math.max(...data.map(item => item.column));
+            var maxRow = Math.max(...data.map(item => item.row));
+
+            for (var row = maxRow; row >= 1; row--) {
+                var tableRow = $("<tr></tr>");
+                for (var column = 1; column <= maxColumn; column++) {
+                    var cell = $("<td></td>");
+                    var value = data.find(item => item.column === column && item.row === row);
+                    cell.text(value ? value.value : " ");
+
+                    // data 속성값을 td에 넣기
+                    if (value && (value.roomid !== null && value.roomid !== undefined)) {
+                        cell.attr("data-roomid", value.roomid);
+                    }
+
+                    if (value && (value.row !== null && value.row !== undefined)) {
+                        cell.attr("data-row", value.row);
+                    }
+
+                    if (value && (value.column !== null && value.column !== undefined)) {
+                        cell.attr("data-column", value.column);
+                    }
+
+                    if (value && (value.name !== null && value.name !== undefined)) {
+                        cell.attr("data-name", value.name);
+                    }
+
+                    if (value && value.class === 'A') {
+                        cell.addClass('A');
+                        cell.addClass('box');
+                        cell.attr("data-status", "계약완료");
+                    } else if (value && value.class === 'B') {
+                        cell.addClass('B');
+                        cell.addClass('box');
+                        cell.attr("data-status", "계약중");
+                    } else if (value) {
+                        cell.addClass('C');
+                        cell.addClass('box');
+                        cell.attr("data-status", "공실");
+                    }
+
+                    tableRow.append(cell);
+                }
+                table.append(tableRow);
+            }
+
+        }
+
+        // 테이블 사이즈 조정
+        function setTableSize(){
+            var maxHeight = parseInt($("#heat-table").css("height"));
+            var maxWidth = parseInt($("#heat-table").css("width"));
+            $("#heat-table tr").css("height", maxHeight/$("tr").length)
+            $("#heat-table td").css("width", maxWidth/$("#heat-table tr:first td").length)
+        }
+
+        // 툴팁 내용 셋팅
+        function setTooltipContent(box){
+            var html = "";
+            html += '<span style="font-size: 16px; color:pink"> [' + '타입' + '] </span>' + '<span style="font-size: 16px">' + box.data("name") + '</span> </br>';
+            html += '<span style="color: #CECECE"> 상태: </span>' + box.data("status") + '</br>';
+            html += '<span style="color: #CECECE"> 형태: </span>' + '개발중' + '</br>';
+            html += '<span style="color: #CECECE"> 타입: </span>' + '개발중' + '</br>';
+            $(".tooltiptext").html(html);
+        }
+
+        createTable(data);
+        setTableSize();
+
+        //클릭 이벤트 테스트용
+        $(".box").click(function (event){
+            console.log($(this).text() + " 를 클릭했습니다.")
+        })
+
+        //마우스 올렸을때 툴팁이 나옴
+        $(".box").hover(function (event){
+            var box = $(this);
+            var tooltip = $(".tooltip");
+            setTooltipContent(box);
+            tooltip.show();
+
+            $(document).on("mousemove", function(event) {
+                var offset = tooltip.parent().offset();
+                var left = offset.left;
+                var top = offset.top;
+
+                var x = event.pageX - (left * 8);
+                var y = event.pageY - top;
+
+                tooltip.css({
+                    left: x,
+                    top: y
+                });
+            });
+        }, function (event) {
+            $(".tooltip").hide();
+        });
+    });
+</script>

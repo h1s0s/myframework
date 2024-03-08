@@ -1,0 +1,17 @@
+# 서버 포트 설정
+server:
+  port: 8080
+
+# 데이터베이스 연결 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/reader_books_database
+    username: han
+    password: 1234567890
+
+# 로깅 설정
+logging:
+  level:
+    root: INFO
+    com.example: DEBUG

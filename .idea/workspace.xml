@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c5900ea4-5467-4366-bd76-7647884d8cd4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/common/MyFrameworkExceptionCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/controller/member/MemberAPIController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/controller/member/MemberViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/domain/member/MemberVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/mepper/member/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/service/member/MemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/apps/myFramework/service/member/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/album-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/album/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/brand/bootstrap-logo-white.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/brand/bootstrap-logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/dist/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/assets/js/color-modes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/blog-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/blog/blog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/blog/blog.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/blog/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/buttons/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/carousel-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/carousel/carousel.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/carousel/carousel.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/carousel/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cheatsheet-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cheatsheet/cheatsheet.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cheatsheet/cheatsheet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cheatsheet/cheatsheet.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cheatsheet/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/checkout-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/checkout/checkout.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/checkout/checkout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/checkout/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cover/cover.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/cover/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard-rtl/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard-rtl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard/dashboard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard/dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard/dashboard.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dashboard/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dropdowns/dropdowns.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/dropdowns/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/features/features.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/features/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/features/unsplash-photo-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/features/unsplash-photo-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/features/unsplash-photo-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/footers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/grid/grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/grid/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/headers/headers.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/headers/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/heroes/bootstrap-docs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/heroes/bootstrap-themes.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/heroes/heroes.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/heroes/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/jumbotron/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/jumbotrons/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/jumbotrons/jumbotrons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/list-groups/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/list-groups/list-groups.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/masonry/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/modals/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/modals/modals.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbar-bottom/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbar-fixed/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbar-fixed/navbar-fixed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbar-static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbar-static/navbar-static.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbars-offcanvas/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbars-offcanvas/navbars-offcanvas.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbars/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/navbars/navbars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/offcanvas-navbar/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/offcanvas-navbar/offcanvas-navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/offcanvas-navbar/offcanvas-navbar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/offcanvas/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/pricing/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/pricing/pricing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/product/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/product/product.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/starter-template/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/sticky-footer-navbar/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/sticky-footer-navbar/sticky-footer-navbar.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/sticky-footer/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap-5.3.1-examples/sticky-footer/sticky-footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/badges/badges.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/badges/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/board/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/board/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/board/floor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/board/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/breadcrumbs/breadcrumbs.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/breadcrumbs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/page/basic.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sidebars/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sidebars/sidebars.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sidebars/sidebars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sign-in/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view/sign-in/sign-in.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2dPEpBNUtb9lYda5qvHA1YYpmR2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15136719",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "spring.configuration.checksum": "df04e65894ec3e2e37c436542b255ec3",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/static/3rdparty" />
+      <recent name="$PROJECT_DIR$/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MyFrameworkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
+      <module name="myFramework.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="apps.myFramework.MyFrameworkApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.MyFrameworkApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5900ea4-5467-4366-bd76-7647884d8cd4" name="Changes" comment="" />
+      <created>1709901496998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709901496998</updated>
+      <workItem from="1709901507108" duration="308000" />
+      <workItem from="1709901855437" duration="679000" />
+      <workItem from="1709902550035" duration="2488000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
