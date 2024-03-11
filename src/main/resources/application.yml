@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/reader_books_database
+    url: jdbc:mysql://localhost:3307/myframework
     username: han
     password: 1234567890
 
